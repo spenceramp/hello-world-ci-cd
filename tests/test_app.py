@@ -1,6 +1,7 @@
 import unittest
 from app import app
 
+
 class TestFlaskApp(unittest.TestCase):
 
     def setUp(self):
@@ -19,6 +20,7 @@ class TestFlaskApp(unittest.TestCase):
         response = self.app.get('/how are you')
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.data.decode(), 'I am good, how about you?')
+
 
 if __name__ == '__main__':
     unittest.main()
