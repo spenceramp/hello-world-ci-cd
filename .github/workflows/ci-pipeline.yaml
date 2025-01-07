@@ -48,7 +48,7 @@ jobs:
 
     - name: Build and Tag Docker Image
       env: 
-        IMAGE_TAG: $(echo $GITHUB_SHA | cut -c1-7)
+        IMAGE_TAG: $(echo $GITHUB_SHA | cut -c 1-7)
       run: |
         docker build -t ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_REPOSITORY }}:$IMAGE_TAG .
 
