@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: 285089875774.dkr.ecr.us-east-1.amazonaws.com/flask-app:4db3f45
+        image: 285089875774.dkr.ecr.us-east-1.amazonaws.com/flask-app:latest
         ports:
         - containerPort: 8080
         imagePullPolicy: Always
