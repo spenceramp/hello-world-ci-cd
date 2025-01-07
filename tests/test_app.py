@@ -13,7 +13,7 @@ class TestFlaskApp(unittest.TestCase):
         # Test the '/' route
         response = self.app.get('/')
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.data.decode(), 'Welcome Spencer!')
+        self.assertEqual(response.data.decode(), 'Welcome!')
 
     def test_custom_route(self):
         # Test the '/how are you' route

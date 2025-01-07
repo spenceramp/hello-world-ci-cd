@@ -1,6 +1,9 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: flask-app=285089875774.dkr.ecr.us-east-1.amazonaws.com/flask-app
+    argocd-image-updater.argoproj.io/flask-app.update-strategy: latest
   name: hello-world-app
   namespace: argocd
 spec:
