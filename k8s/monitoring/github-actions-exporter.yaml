@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: github-actions-exporter
+  namespace: monitoring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: github-actions-exporter
+  template:
+    metadata:
+      labels:
+        app: github-actions-exporter
+    spec:
+      containers:
+      - name: github-actions-exporter
+        image: ghcr.io/labbs/github-actions-exporter:latest
+        ports:
+        - containerPort: 9999
+        env:
+        - name: GITHUB_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: github-token
+              key: token
